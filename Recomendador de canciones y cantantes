@@ -22,15 +22,12 @@ void agregarCantante() {
     Cantante nuevoCantante;
     printf("Ingrese el nombre del cantante: ");
     scanf("%s", nuevoCantante.nombre);
-
     printf("¿Cuántas canciones desea agregar? ");
     scanf("%d", &nuevoCantante.num_canciones);
-
     for (int i = 0; i < nuevoCantante.num_canciones; i++) {
         printf("Ingrese el nombre de la canción %d: ", i + 1);
         scanf("%s", nuevoCantante.canciones[i]);
     }
-
     cantantes[num_cantantes] = nuevoCantante;
     num_cantantes++;
     printf("Cantante y canciones agregados exitosamente.\n");
