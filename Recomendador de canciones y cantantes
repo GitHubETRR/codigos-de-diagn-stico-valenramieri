@@ -9,3 +9,38 @@ typedef struct {
     char canciones[10][50];
     int num_canciones;      
 } Cantante;
+Cantante cantantes[50]; 
+int num_cantantes = 0;   
+
+
+void agregarCantante() {
+    if (num_cantantes >= 50) {
+        printf("No se puede agregar más cantantes. Limite alcanzado.\n");
+        return;
+    }
+
+    Cantante nuevoCantante;
+    printf("Ingrese el nombre del cantante: ");
+    scanf("%s", nuevoCantante.nombre);
+
+    printf("¿Cuántas canciones desea agregar? ");
+    scanf("%d", &nuevoCantante.num_canciones);
+
+    for (int i = 0; i < nuevoCantante.num_canciones; i++) {
+        printf("Ingrese el nombre de la canción %d: ", i + 1);
+        scanf("%s", nuevoCantante.canciones[i]);
+    }
+
+    cantantes[num_cantantes] = nuevoCantante;
+    num_cantantes++;
+    printf("Cantante y canciones agregados exitosamente.\n");
+}
+
+
+void recomendacionAlAzar() {
+    if (num_cantantes == 0) {
+        printf("No hay cantantes en la lista.\n");
+        return;
+    }
+
+   
